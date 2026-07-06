@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar</title>
+    <link rel="stylesheet" href="/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+        <div class="login-card">
+            <h1>Entrar no Sistema</h1>
+            <p class="subtitle">Controle Eleéctrico</p>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <div class="input-wrapper">
+                        <i class="bi bi-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="Digite o seu e-mail" required autocomplete="email">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <div class="input-wrapper">
+                        <i class="bi bi-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Digite a sua senha" required autocomplete="current-password">
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn">Entrar</button>
+                
+                <!-- O Span dinâmico para exibição de mensagens fica exatamente aqui -->
+                <span id="messageBox" class="message-box"></span>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/login.js" type="module"></script>
+
+</body>
+
+</html>

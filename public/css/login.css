@@ -1,0 +1,206 @@
+:root {
+    --primary-color: #0284c7;
+    --primary-hover: #0369a1;
+    --bg-color: #f0fdf4;
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    --card-bg: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --border-color: #e2e8f0;
+    --border-focus: #38bdf8;
+    --color-error: #ef4444;
+    --color-warning: #f59e0b;
+    --color-success: #10b981;
+}
+
+body {
+    margin: 0;
+    height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-gradient);
+    overflow: hidden;
+}
+
+.login-container {
+    width: 100%;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    background-color: var(--card-bg);
+    padding: 3rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+    transition: padding 0.3s, border-radius 0.3s;
+}
+
+.login-card h1 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-main);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.025em;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.75rem;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 1rem;
+    color: #94a3b8;
+    font-size: 1.25rem;
+    pointer-events: none;
+    transition: color 0.2s;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 0.85rem 1rem 0.85rem 2.75rem;
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-main);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+    box-sizing: border-box;
+    background-color: #f8fafc;
+}
+
+.input-wrapper input:focus {
+    background-color: var(--card-bg);
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+}
+
+.input-wrapper input:focus+i {
+    color: var(--primary-color);
+}
+
+button {
+    width: 100%;
+    padding: 0.85rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.2);
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+    box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.3);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    background-color: #cbd5e1;
+    color: #94a3b8;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.message-box {
+    display: block;
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    min-height: 1.25rem;
+    transition: color 0.2s;
+}
+
+.message-box.error {
+    color: var(--color-error);
+}
+
+.message-box.warning {
+    color: var(--color-warning);
+}
+
+.message-box.success {
+    color: var(--color-success);
+}
+
+@media (max-width: 480px) {
+    body {
+        background: var(--card-bg);
+    }
+
+    .login-container {
+        padding: 0;
+    }
+
+    .login-card {
+        max-width: 100%;
+        height: 100dvh;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+    }
+
+    .subtitle {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-height: 600px) and (min-width: 481px) {
+    body {
+        overflow-y: auto;
+    }
+
+    .login-container {
+        align-items: flex-start;
+        padding: 2rem 1rem;
+    }
+}

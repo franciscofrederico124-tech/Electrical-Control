@@ -1,0 +1,112 @@
+:root {
+    --card-bg: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --border-color: #e2e8f0;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 3rem;
+}
+
+.about h1 {
+    margin: 0 auto 0.25rem auto;
+    text-align: center;
+    color: var(--text-main);
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.about-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+.about-cards {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    justify-content: center;
+    align-content: start;
+    gap: 24px;
+    width: 100%;
+    max-width: 1200px;
+    flex: 1;
+}
+
+.about-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.about-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.08);
+}
+
+.about-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.about-header i {
+    font-size: 1.5rem;
+    color: #0284c7;
+    background-color: #e0f2fe;
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-header h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.about-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+    text-align: left;
+}
+
+@media (max-width: 600px) {
+    .about {
+        padding-bottom: 2rem;
+    }
+
+    .about h1 {
+        font-size: 1.4rem;
+    }
+    
+    .about-subtitle {
+        margin-bottom: 1.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .about-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}

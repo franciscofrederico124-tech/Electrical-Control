@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Eléctrico</title>
+    <link rel="stylesheet" href="/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/control.css">
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/config.css">
+</head>
+
+<body>
+    <header>
+        <h1>Sistema de Controlo Eléctrico</h1>
+    </header>
+
+    <main>
+        <nav>
+            <ul>
+                <li class="{{#if activeHome}}active{{/if}}">
+                    <a href="/inicio/dashboard">
+                        <i class="bi bi-house"></i>
+                        <span>Início</span>
+                    </a>
+                </li>
+                <li class="{{#if activeControl}}active{{/if}}">
+                    <a href="/inicio/controlar">
+                        <i class="bi bi-command"></i>
+                        <span>Controlar</span>
+                    </a>
+                </li>
+                <li class="{{#if activeAbout}}active{{/if}}">
+                    <a href="/inicio/sobre">
+                        <i class="bi bi-question-circle"></i>
+                        <span>Sobre o sistema</span>
+                    </a>
+                </li>
+                <li class="{{#if activeSettings}}active{{/if}}">
+                    <a href="/inicio/configuracoes">
+                        <i class="bi bi-gear"></i>
+                        <span>Configurações</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="content-section">
+            {{{body}}}
+        </section>
+    </main>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/control.js" type="module"></script>
+</body>
+
+</html>
