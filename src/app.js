@@ -48,6 +48,7 @@ const port = process.env.PORT;
 initSytem();
 
 app.use("/system", systemRoutes);
+app.use(systemRoutes);
 app.use("/inicio", pages);
 app.use("/auth", auth);
 

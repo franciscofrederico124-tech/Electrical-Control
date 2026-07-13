@@ -9,4 +9,8 @@ router.get("/ping", systemControllers.ping);
 router.post("/get-data", getdData);
 router.get("/set-data", setData);
 
+router.get("/", (req, res) => {
+    res.status(200).redirect("/inicio");
+});
+
 export default router
