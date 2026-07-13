@@ -20,21 +20,21 @@ app.use(express.json());
 
 app.use(cors({
     origin: true,
-    credentials: true, 
+    credentials: true,
 }));
 
 app.set('trust proxy', 1);
 
 
 app.use(session({
-    secret: 'Industrial_control_secret_key', 
+    secret: 'Industrial_control_secret_key',
     resave: false,
-    saveUninitialized: false, 
+    saveUninitialized: false,
     cookie: {
         maxAge: 1000 * 60 * 60,
         httpOnly: true,
         secure: true,
-        sameSite: 'none' 
+        sameSite: 'none'
     }
 }));
 
@@ -56,6 +56,7 @@ app.use("/system", systemRoutes);
 app.use(systemRoutes);
 app.use("/inicio", pages);
 app.use("/auth", auth);
+
 
 app.use(pages);
 
