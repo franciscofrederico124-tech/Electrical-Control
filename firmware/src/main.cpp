@@ -43,6 +43,29 @@ void loop()
 {
 
   const int voltage_value = ((int)(round((int)(voltage_sensor.read_analog() * 25) / 4095)));
+  light = ldr.read_analog();
+
+  if (light > 1500)
+  {
+    mov = false;
+  }
+  else
+  {
+    mov = true;
+  }
+
+  Serial.printf("\n| > Luz: %i\n", light);
+
+  if (mov)
+  {
+    servo_deg = increment ? servo_deg + 3 : servo_deg - 3;
+    if (servo_deg >= 180)
+      increment = false;
+    if (servo_deg <= 0)
+      increment = true;
+  }
+
+  solar_servo.write(servo_deg);
 
   if (voltage_value < 1)
   {
@@ -69,8 +92,11 @@ void loop()
   serializeJsonPretty(doc, json_payload);
 
   Serial.println(json_payload);
-  String res_ = send_data(json_payload);
+  if (mov == false)
+  {
+    String res_ = send_data(json_payload);
 
-  printf("\n| > Resposta do servidpr: %s\n", res_.c_str());
-  delay(5000);
+    printf("\n| > Resposta do servidpr: %s\n", res_.c_str());
+  }
+  delay(10);
 }
